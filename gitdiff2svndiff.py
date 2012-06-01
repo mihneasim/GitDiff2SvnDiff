@@ -2,8 +2,8 @@ import sys
 
 if __name__ == "__main__":
     if len(sys.argv) < 3:
-        sys.exit("Usage: python %s svn_revision_number"
-                 " [path_prefix_to_append]" % argv[0])
+        sys.exit("Usage: python %s git_diff_file svn_revision_number"
+                 " [path_prefix_to_append]" % sys.argv[0])
     prefix = ""
     if len(sys.argv) == 4:
         prefix = sys.argv[3]
