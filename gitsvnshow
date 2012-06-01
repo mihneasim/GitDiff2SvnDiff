@@ -1,0 +1,6 @@
+#!/bin/bash
+
+ABSPATH="/path/to/folder/of/gitdiff2svndiff"
+REVISION=$(git log HEAD^ -1 | grep git-svn-id | sed 's/^.*@\([0-9]\+\).*$/\1/')
+git show --full-index > /tmp/git.diff
+python $ABSPATH"/gitdiff2svndiff.py" /tmp/git.diff $REVISION
